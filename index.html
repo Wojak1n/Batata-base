@@ -1,15 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Math Operations</title>
 </head>
-<body>
-    <h1> Calculator system </h1>
-    <label for="numberSelect"> choose a numberSelect</label>
-    <select name="" id="numberSelect"></select>
 
+<body>
+    <h1>Math Operations</h1>
+
+    <!-- Select numbers -->
+    <label for="numberSelect">Choose a number:</label>
+    <select id="numberSelect">
+        <!-- Options will be filled dynamically from JSON -->
+    </select>
+
+    <!-- Input for another number -->
+    <label for="userInput">Enter a number:</label>
+    <input type="number" id="userInput">
+
+    <div>
+        <label><input type="radio" name="operation" value="add" checked> Add (+)</label>
+        <label><input type="radio" name="operation" value="subtract"> Subtract (-)</label>
+        <label><input type="radio" name="operation" value="multiply"> Multiply (*)</label>
+        <label><input type="radio" name="operation" value="divide"> Divide (÷)</label>
+    </div>
+
+    <button id="calculateBtn">Calculate</button>
+
+    <h2>Result: </h2>
+    <span id="result">0</span>
     <script src="script.js"></script>
 </body>
+
 </html>
