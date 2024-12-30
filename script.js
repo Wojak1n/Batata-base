@@ -1,21 +1,21 @@
-fetch("number.json")
+fetch("numbers.json")
 .then((response) => response.json())
 .then((data)=> {
   const numberSelect = document.getElementById("numberSelect");
   data.numbers.forEach((number)=> {
     const option = document.createElement("option");
-    option.value = number;
+    option.setAttribute = number;
     option.textContent = number;
     numberSelect.appendChild(option);
   });
 })
-.catch((error)=> console.error("cant load this page"), error);
+
 document.getElementById("calculateBtn").addEventListener("click", () => {
-const numberSelect = document.getElementById("numberSelect").value;
-const userInput = document.getElementById("userInput").value;
+const numberSelect = parseFloat(document.getElementById("numberSelect").value);
+const userInput = parseFloat(document.getElementById("userInput").value);
 const operation = document.querySelector('input[name="operation"]:checked').value;
 let result;
-if(typeof userInput !== "number"){
+if(isNaN(userInput)) {
   alert("Please enter a valid number");
  return; 
 }
